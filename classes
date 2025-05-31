@@ -1,0 +1,74 @@
+#include <iostream>
+
+// Classes in C++
+// From my small knowledge about them prior to the video, If i am not mistaken,
+// Classes are like a tree
+// Whats inside the class are like branches on that tree
+// For example, we can have a player class which holds the players health, X,Y,Z, Quardinates, View angles, ETC
+#define text(x) std::cout << (x) << std::endl;
+
+// Classes hold data around a variable type
+
+class playerent 
+
+{
+public: // Allows our class to be used in main
+
+	// Everything playerend hosts.
+	// Accessible by playerent.x , playerent.y etc
+	int x, y, z;
+
+	int health;
+
+	double speed;
+
+
+	void move(int xa, int ya, int za)
+	{
+		x += xa * speed;
+		y += ya * speed;
+		z += za * speed;
+
+	}
+
+
+	void heal(int hp)
+	{
+		health += hp;
+	}	
+	void damaged(int hp)
+	{
+		health += hp;
+	}
+
+
+
+
+};
+
+
+int main()
+{
+	playerent localplayer;
+	playerent entity;
+	entity.health = 4;
+	localplayer.health = 100;
+
+
+	std::cout << localplayer.health << std::endl;
+	std::cout << entity.health << std::endl;
+	
+	localplayer.damaged(50);
+
+	std::cout << localplayer.health << std::endl;
+	entity.heal(500);
+	std::cout << entity.health << std::endl;
+
+
+	entity.move(40, 50, 20);
+
+	
+
+
+
+}
